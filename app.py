@@ -13,6 +13,8 @@ from resources.user import blp as UserBlueprint
 def create_app(db_url=None):
  
     app = Flask(__name__)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
 
     app.config["PROPAGATE_EXCEPTIONS"]=True
     app.config["API_TITLE"]="Store REST API"
